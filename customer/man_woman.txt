@@ -1,0 +1,30 @@
+if(SelectedIndex == 1){
+          Categories(),
+          Expanded(child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+              child: GridView.builder(
+                itemCount: products.length,
+                gridDelegate:
+                    SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: kDefaultPaddin,
+                      crossAxisSpacing: kDefaultPaddin,
+                      childAspectRatio: 0.75,
+                    ),
+                    itemBuilder: (context, index) =>
+                        itemcard(
+                          product: products[index],
+                          press : () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailsScreen(product: products[index],)
+                              )
+                          ),
+                        ),
+              ),
+            ),
+          ),
+        }
+        else{<Widget>
+          Container(color: Colors.blueGrey[100], child: Text("Man hell yeah"),)
+        }
